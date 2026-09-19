@@ -147,6 +147,10 @@ def init_db():
     cols = {r[1] for r in db.execute("PRAGMA table_info(consultations)").fetchall()}
     if "user_id" not in cols:
         db.execute("ALTER TABLE consultations ADD COLUMN user_id INTEGER")
+    if "professional_response" not in cols:
+        db.execute("ALTER TABLE consultations ADD COLUMN professional_response TEXT")
+    if "responded_at" not in cols:
+        db.execute("ALTER TABLE consultations ADD COLUMN responded_at TEXT")
     cols = {r[1] for r in db.execute("PRAGMA table_info(audit_logs)").fetchall()}
     if "user_id" not in cols:
         db.execute("ALTER TABLE audit_logs ADD COLUMN user_id INTEGER")
