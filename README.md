@@ -6,6 +6,8 @@ AgriGuide AI is a full-stack agricultural assistance platform designed to help f
 
 The project combines agricultural extension concepts, artificial intelligence, web development, and cybersecurity to create a secure digital platform for farmer support.
 
+![AgriGuide AI Application](screenshots/home.png)
+
 **Project status:** Hackathon MVP / Portfolio Project
 
 ---
