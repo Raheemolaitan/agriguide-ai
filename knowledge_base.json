@@ -1,0 +1,50 @@
+[
+  {
+    "topic": "crop_tomato_leaf_spots",
+    "type": "crop",
+    "keywords": ["tomato", "brown spots", "leaf spots", "yellow leaves", "fungus"],
+    "content": "Tomato leaf spotting and yellowing can have several causes, including fungal or bacterial disease, nutrient imbalance, water stress, or pest damage. Inspect the underside of leaves, recent weather, irrigation pattern, plant density, and whether symptoms are spreading. Remove badly affected plant material where appropriate, improve airflow, avoid unnecessary leaf wetting, and seek local extension advice before applying pesticides."
+  },
+  {
+    "topic": "crop_maize_yellowing",
+    "type": "crop",
+    "keywords": ["maize", "corn", "yellow leaves", "yellowing", "nitrogen"],
+    "content": "Yellowing maize can result from nutrient deficiency, waterlogging, drought, root problems, disease, or other stresses. Check whether yellowing starts on older or newer leaves, examine soil moisture and drainage, and review fertilizer history. Avoid applying fertilizer blindly; local soil and crop conditions should guide corrective action."
+  },
+  {
+    "topic": "crop_pest_management",
+    "type": "crop",
+    "keywords": ["pest", "insect", "caterpillar", "aphid", "leaf damage"],
+    "content": "Integrated pest management starts with correct identification. Inspect affected leaves and stems, estimate the extent of damage, remove heavily infested material where practical, encourage beneficial organisms, and use only approved products according to their labels and local agricultural guidance."
+  },
+  {
+    "topic": "livestock_poultry_respiratory",
+    "type": "livestock",
+    "keywords": ["chicken", "poultry", "coughing", "sneezing", "respiratory", "swollen eyes"],
+    "content": "Respiratory signs in poultry can have multiple causes, including infectious disease, poor ventilation, dust, ammonia, or other environmental problems. Check flock size affected, mortality, ventilation, litter condition, recent introductions, vaccination history, feed/water intake, and duration. Sudden deaths, rapid spread, severe breathing difficulty, or major production losses warrant prompt veterinary assessment."
+  },
+  {
+    "topic": "livestock_sudden_death",
+    "type": "livestock",
+    "keywords": ["animal dying", "sudden death", "chickens dying", "cattle dying", "goats dying", "mortality"],
+    "content": "Sudden or unexplained animal deaths are high-risk situations. Do not rely on an AI diagnosis. Isolate affected animals where appropriate, avoid moving potentially affected animals between farms, preserve relevant records, and contact a qualified veterinarian or livestock professional promptly. Follow local animal-health reporting requirements where applicable."
+  },
+  {
+    "topic": "livestock_feeding",
+    "type": "livestock",
+    "keywords": ["feed", "feeding", "poultry feed", "cattle feed", "goat feed", "nutrition"],
+    "content": "Livestock diets should match species, age, production stage, health status, and local feed availability. Sudden feed changes can cause problems. Check clean water availability, feed freshness, storage conditions, and whether intake has changed. A nutritionist or veterinarian can help formulate or correct a ration for a specific production system."
+  },
+  {
+    "topic": "fish_farming",
+    "type": "livestock",
+    "keywords": ["fish", "catfish", "tilapia", "pond", "water quality", "aquaculture"],
+    "content": "Fish health is strongly affected by water quality, stocking density, feed, temperature, dissolved oxygen, and handling. Check water quality and oxygen conditions before assuming disease. Sudden mortalities or persistent abnormal behavior should be assessed by an aquaculture professional."
+  },
+  {
+    "topic": "soil_basics",
+    "type": "crop",
+    "keywords": ["soil", "fertilizer", "pH", "nutrient", "fertility"],
+    "content": "Good fertilizer decisions depend on crop, soil properties, previous cropping, expected yield, and local conditions. Soil testing is preferable to guessing nutrient needs. Avoid excessive fertilizer application because it can waste money and harm soil and water."
+  }
+]

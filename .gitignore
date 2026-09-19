@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+*.db
+*.sqlite
+*.sqlite3
+app_working_backup.py
+app_before_headers.py
+app_before_expert_filter_fix.js
+static/app_working_backup.js
+static/index_working_backup.html
+.DS_Store

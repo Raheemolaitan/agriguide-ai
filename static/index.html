@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AgriGuide AI</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="authView" class="auth-shell">
+  <div class="auth-brand"><span>🌱</span><strong>AgriGuide AI</strong></div>
+  <div class="auth-card">
+    <div class="auth-copy">
+      <p class="eyebrow">SMART FARMING • SECURE ACCESS</p>
+      <h1 id="authTitle">Welcome back</h1>
+      <p id="authSubtitle" class="muted">Sign in securely to access your farm assistant.</p>
+    </div>
+
+    <div id="loginForm">
+      <label>Email<input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>
+      <label>Password<input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password"></label>
+      <button class="primary full" id="loginBtn">Log in</button>
+      <p class="switch-text">New to AgriGuide? <button class="link-btn" onclick="showAuth('register')">Create an account</button></p>
+    </div>
+
+    <div id="registerForm" class="hidden">
+      <label>Full name<input id="regName" autocomplete="name" placeholder="Your full name"></label>
+      <label>Email<input id="regEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>
+      <label>Location<input id="regLocation" placeholder="e.g. Abuja"></label>
+      <label>Farming area
+        <select id="regFarmType">
+          <option value="crop">🌾 Crops</option>
+          <option value="livestock">🐄 Livestock</option>
+          <option value="both" selected>🌾🐄 Both</option>
+        </select>
+      </label>
+      <label>Password<input id="regPassword" type="password" autocomplete="new-password" placeholder="At least 8 characters"></label>
+      <label>Confirm password<input id="regConfirm" type="password" autocomplete="new-password" placeholder="Repeat your password"></label>
+      <button class="primary full" id="registerBtn">Create account</button>
+      <p class="switch-text">Already have an account? <button class="link-btn" onclick="showAuth('login')">Log in</button></p>
+    </div>
+
+    <div class="security-note">🔐 Passwords are hashed. Protected pages require an authenticated session.</div>
+  </div>
+</div>
+
+<div id="appView" class="hidden">
+<header class="topbar">
+  <div class="brand"><span>🌱</span><strong>AgriGuide AI</strong></div>
+  <div class="top-actions"><span id="modeBadge" class="badge">Checking AI…</span><span id="userBadge" class="user-badge"></span><button class="logout-btn" id="logoutBtn">Logout</button></div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">SMART FARMING • HUMAN EXPERTISE</p>
+      <h1>AI guidance for every farm.</h1>
+      <p class="lead">Get practical crop and livestock guidance, then connect with a qualified professional when AI cannot safely handle the problem.</p>
+      <button class="primary" onclick="showSection('assistant')">Ask AgriGuide →</button>
+    </div>
+    <div class="hero-art">🌾<br>🐄<br>🤖</div>
+  </section>
+
+  <section class="profile card">
+    <div>
+      <h2>Farmer profile</h2>
+      <p class="muted">Your profile is tied to your authenticated account.</p>
+    </div>
+    <div class="grid2">
+      <label>Name<input id="farmerName" readonly></label>
+      <label>Location<input id="location"></label>
+      <label>Farming area
+        <select id="farmType">
+          <option value="crop">🌾 Crops</option>
+          <option value="livestock">🐄 Livestock</option>
+          <option value="both">🌾🐄 Both</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" data-target="assistant">🤖 AI Assistant</button>
+    <button class="tab" data-target="image">📷 Image Analysis</button>
+    <button class="tab" data-target="experts">👨🏾‍⚕️ Find Expert</button>
+    <button class="tab" data-target="consultations">📋 My Requests</button>
+      <button class="tab hidden" id="professionalTab" data-target="professional">🩺 Professional Dashboard</button>
+  </nav>
+
+  <section id="assistant" class="section">
+    <div class="card">
+      <h2>Ask AgriGuide</h2>
+      <p class="muted">Describe a crop, livestock or farm-management problem.</p>
+      <textarea id="question" placeholder="Example: My tomato leaves have brown spots and the lower leaves are turning yellow."></textarea>
+      <div class="row"><button class="primary" id="askBtn">Get guidance</button><button class="secondary" onclick="fillExample()">Use example</button></div>
+    </div>
+    <div id="answerCard" class="card hidden"></div>
+  </section>
+
+  <section id="image" class="section hidden">
+    <div class="card">
+      <h2>📷 Analyze a farm image</h2>
+      <p class="muted">Upload a crop or animal image. Live AI mode can analyze the image; demo mode shows the workflow without an API key.</p>
+      <input id="imageFile" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp">
+      <textarea id="imageQuestion" placeholder="Optional: What are you worried about in this image?"></textarea>
+      <button class="primary" id="imageBtn">Analyze image</button>
+    </div>
+    <div id="imageResult" class="card hidden"></div>
+  </section>
+
+  <section id="experts" class="section hidden">
+    <div class="card">
+      <h2>👨🏾‍⚕️ Connect to a professional</h2>
+      <p class="muted">AgriGuide is not a replacement for qualified professionals. Use this directory when a case needs human assessment.</p>
+      <div class="grid2">
+        <label>Specialty<select id="specialty"><option value="">All specialists</option><option>Veterinarian</option><option>Poultry Specialist</option><option>Agricultural Extension Officer</option><option>Agronomist</option><option>Soil Specialist</option><option>Aquaculture Specialist</option></select></label>
+        <label>Location<input id="expertLocation"></label>
+      </div>
+      <button class="primary" id="findBtn">Find professionals</button>
+    </div>
+<div id="expertRecommendation" class="card hidden">
+  <h3>🤖 AgriGuide recommendation</h3>
+  <p id="recommendationText" class="muted"></p>
+  <button class="primary" id="useRecommendationBtn" type="button">
+    Use recommended specialty
+  </button>
+</div>
+   
+ <div id="expertList" class="expert-grid"></div>
+  </section>
+
+  <section id="consultations" class="section hidden">
+    <div class="card">
+  <h2>📋 My consultation requests</h2>
+  <p class="muted">Only requests created from your authenticated account are shown here.</p>
+  <div id="consultationNotification" class="consultation-notification hidden"></div>
+</div>
+<div id="consultationList" class="expert-grid"></div>
+  </section>
+
+  <section id="professional" class="section hidden">
+  <div class="card">
+    <h2>👨🏾‍⚕️ Professional Dashboard</h2>
+    <p class="muted">Review consultation requests submitted by farmers.</p>
+
+    <div id="professionalSummary" class="professional-summary"></div>
+  </div>
+
+  <div id="professionalConsultationList" class="expert-grid"></div>
+</section>
+
+  <section class="trust card"><div class="trust-icon">🔐</div><div><h2>Built with trust in mind</h2><p>AgriGuide uses authenticated sessions, password hashing, CSRF protection, input validation, upload limits, prompt-injection filtering, audit logging and high-risk escalation.</p></div></section>
+</main>
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>
