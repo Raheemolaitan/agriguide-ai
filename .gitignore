@@ -11,3 +11,7 @@ app_before_expert_filter_fix.js
 static/app_working_backup.js
 static/index_working_backup.html
 .DS_Store
+
+# Local development backups
+app_before_*.py
+static/app_before_*.js
