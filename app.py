@@ -867,7 +867,8 @@ def too_large(e):
     return jsonify({"error": "Upload too large. Maximum request size is 6 MB."}), 413
 
 
+init_db()
+
 if __name__ == "__main__":
-    init_db()
     port = int(os.getenv("PORT", "5000"))
     app.run(host="127.0.0.1", port=port, debug=True)
